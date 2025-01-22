@@ -1,0 +1,1 @@
+export const docusignlogo = require("../img/signdocx-logo.svg");
