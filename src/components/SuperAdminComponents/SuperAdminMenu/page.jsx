@@ -1,6 +1,7 @@
 import React from 'react'
 import { showMenu, hideMenu } from "../../../Features/Counter/menushow";
-import { docusignlogo } from '../../../images/image';
+import { IMAGE_NAME } from '../../../images/image';
+import { getUserName } from '../../../Services/common';
 
 export default function Page(props) {
     return (
@@ -82,16 +83,16 @@ export default function Page(props) {
                                 </div>
                             </div>
                         </div>
-                        <strong>Hi, Admin</strong>
+                        <strong>Hi, {getUserName()}</strong>
                         {/* <span className="myprofile dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">A</span> */}
-                        <i className='bi bi-person-circle'></i>
+                        <i className='bi bi-person-circle dropdown-toggle' data-bs-toggle="dropdown"></i>
                         <div className="dropdown-menu dropdown-menu-end">
-                            <span className="name-ful">Hussain</span>
+                            <span className="name-ful">{getUserName()}</span>
                             <a className="dropdown-item"><i className="bi bi-person-fill"></i>&nbsp; Edit Profile</a>
                             <div className="dropdown-divider"></div>
                             <a className="dropdown-item"><i className="bi bi-key"></i>&nbsp; Change Password</a>
                             <div className="dropdown-divider"></div>
-                            <a className="dropdown-item"><i className="bi bi-box-arrow-in-left"></i>&nbsp; Logout</a>
+                            <a className="dropdown-item" onClick={() => {props.logout()}}><i className="bi bi-box-arrow-in-left"></i>&nbsp; Logout</a>
                         </div>
                     </div>
                 </div>
@@ -103,7 +104,7 @@ export default function Page(props) {
                     <div className="sidebar-brand">
                         <a>
                             {/* <img src="" /> */}
-                            <img src={docusignlogo} />
+                            <img src={IMAGE_NAME.PROJECT_LOGO} />
                             {/* <img src={`${process.env.PUBLIC_URL}/assets/img/my-image.jpg`} alt="My Image" /> */}
                             {/* <img src="/assets/img/my-image.jpg" alt="My Image" /> */}
                         </a>

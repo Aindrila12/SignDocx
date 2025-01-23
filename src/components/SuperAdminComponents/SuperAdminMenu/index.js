@@ -43,11 +43,17 @@ export default function SuperAdminMenu() {
         navigate(url);
     }
 
+    const logout = () => {
+        navigate("/");
+        sessionStorage.removeItem("user");
+    }
+
     return (
         <Page 
             menuList={menuList}
             dispatch={dispatch}
             getPath={getPath}
+            logout={logout}
         />
     )
 }

@@ -60,7 +60,7 @@ export default function AdminLogin() {
         }
 
         if (err === 0) {
-            navigate("/super-admin");
+            navigate("/admin");
             // const data = {
             //     "email": userName,
             //     "password": password
